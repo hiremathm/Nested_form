@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Articles</h1>
+<ol type="1">
+    <% @articles.each do |article| %>
+        <li><%= link_to article.name,article %> (<%= article.comments.count%> comments)</li><br/>
+    <% end %>
+</ol>
+<br>
+
+<%= link_to 'New Article', new_article_path %>
