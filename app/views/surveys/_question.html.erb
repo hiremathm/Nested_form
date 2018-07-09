@@ -1,0 +1,15 @@
+<div class="fields">
+	<p>
+		<%= f.label :context, "Question"%> 	<%= f.check_box :_destroy %><%= f.label :_destroy, "Remove" %>
+<br/>
+		<%#= link_to_remove_fields "remove", f%>
+		<%= f.text_area :context, :rows => 3%>
+		<%#= f.check_box :_destroy %>
+		<%#= f.label :_destroy, "Remove" %>
+	</p>
+	<p>
+		<%= f.fields_for :answers do |builder|%>
+		    <%= render 'answer', :f => builder%>
+		<% end %>
+	</p>
+</div>

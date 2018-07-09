@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject :</strong> <%= @survey.name %>
+  
+</p>
+	
+	<% @survey.questions.each do |question| %>
+		<ol style="list-style-type:circle">
+			<li><%= question.context%></li>
+			<% question.answers.each do |answer|%>
+				<ol><li><%= answer.context%></li></ol>
+			<% end %>
+		</ol>
+			
+	<% end %>
+<p>
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
+</p>
